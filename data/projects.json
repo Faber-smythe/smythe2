@@ -1,0 +1,52 @@
+[
+  {
+    "title": "xArm-6 Viewer",
+    "link": "https://playground.babylonjs.com/#STVR4P#16",
+    "image": "xarm-6.png",
+    "alt": "a smooth white robotic arm with multiple articulation",
+    "desc": "This model is part of a controller dashboard for an industrial robotic arm with real-time monitoring.<br/>This team project was lead within the <a href='https://dvic.devinci.fr/' target='_blank'>De Vinci Innovation Center</a>.",
+    "badges": [
+      "babylon",
+      "typescript",
+      "blender"
+    ]
+  },
+  {
+    "title": "CH3SS",
+    "link": "https://ch3ss.smythe.fr/",
+    "image": "ch3ss.png",
+    "alt": "3D chess pieces are aligned, floating in a cosmic environment",
+    "desc": "This work in progress is a three dimensional, multiplayer chess game.<br/>This is an ongoing custom project, rules and assets are all original based designs.",
+    "badges": [
+      "nuxt",
+      "babylon",
+      "typescript",
+      "blender",
+      "gsap"
+    ]
+  },
+  {
+    "title": "Watch Configurator",
+    "link": "https://www.cartier.com/en-us/watches/all-collections/pasha-de-cartier/set-for-you-by-cartier.html",
+    "image": "pasha_configurator.png",
+    "alt": "A 3D scene of a luxury watch, next to a customization interface",
+    "desc": "Several immersive experiences for luxury brands, such as Cartier. A watch configurator has also be adapted to an <a href='https://www.youtube.com/watch?v=Q--B8yOnt8Q&ab_channel=Visionaries777Ltd.' target='_blank'>interactive shop front.&nbsp;<a href='https://www.youtube.com/watch?v=RBB0ASPFtC4&ab_channel=Visionaries777Ltd.' target='_blank'><strong>(see video demo)</strong></a>",
+    "badges": [
+      "react",
+      "playcanvas",
+      "typescript"
+    ]
+  },
+  {
+    "title": "Morse Learner",
+    "link": "https://faber-smythe.github.io/morsing/",
+    "image": "morsing.png",
+    "alt": "A desk with a morse key in front of a sunset",
+    "desc": "This custom project began as a morse interpreter, and became a learning tool in addition to a 3D web experience.",
+    "badges": [
+      "babylon",
+      "blender",
+      "typescript"
+    ]
+  }
+]
