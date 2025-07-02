@@ -18,12 +18,12 @@
       </h2>
     </header>
 
-    <Scene
+    <!-- <Scene
       :progress="scrollProgress"
       :cursor="cursor"
       :page-loaded="pageLoaded"
       @compass-loaded="compassIsLoaded()"
-    />
+    /> -->
     <div ref="up" class="angleUp" title="up">
       <svg
         width="24"
