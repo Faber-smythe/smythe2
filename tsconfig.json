@@ -35,7 +35,8 @@
   },
   "files": [
     "node_modules/gsap/types/index.d.ts",
-    "node_modules/babylonjs/babylon.module.d.ts"
+    "node_modules/babylonjs/babylon.module.d.ts",
+    "node_modules/babylonjs-loaders/babylonjs.loaders.module.d.ts"    
   ],
   "include": [
     "nuxt.d.ts", 

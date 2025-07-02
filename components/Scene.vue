@@ -7,8 +7,6 @@
 <script setup lang="ts">
 // libs
 import { ref, onMounted, PropType, watch } from "vue";
-import * as BABYLON from "babylonjs";
-import "babylonjs-loaders";
 import { gsap, Power1 } from "gsap";
 // components
 // types
@@ -77,6 +75,7 @@ const initScene = () => {
   });
   resizeWatcher.observe(canvas);
 };
+
 const loadCompass = async () => {
   const pbr = new BABYLON.PBRMaterial("pbr", scene);
   pbr.backFaceCulling = false;
@@ -216,6 +215,9 @@ const emit = defineEmits<{
 }>();
 
 onMounted(async () => {
+  const BABYLON = await import("babylonjs");
+  await import("babylonjs-loaders");
+
   if (isMobile() || isSmartPhone()) {
     offset = -0.2;
   }
