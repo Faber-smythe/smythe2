@@ -18,12 +18,14 @@
       </h2>
     </header>
 
-    <!-- <Scene
-      :progress="scrollProgress"
-      :cursor="cursor"
-      :page-loaded="pageLoaded"
-      @compass-loaded="compassIsLoaded()"
-    /> -->
+    <ClientOnly fallback-tag="span" fallback="Loading 3D scene...">
+      <Scene
+        :progress="scrollProgress"
+        :cursor="cursor"
+        :page-loaded="pageLoaded"
+        @compass-loaded="compassIsLoaded()"
+      />
+    </ClientOnly>
     <div ref="up" class="angleUp" title="up">
       <svg
         width="24"

@@ -6,9 +6,9 @@
 
 <script setup lang="ts">
 // libs
-import { ref, onMounted, PropType, watch } from "vue";
-import * as BABYLON from "babylonjs";
-import "babylonjs-loaders";
+import { ref, onMounted, onUnmounted, PropType, watch } from "vue";
+// import * as BABYLON from "babylonjs";
+// import "babylonjs-loaders";
 import { gsap, Power1 } from "gsap";
 // components
 // types
@@ -30,10 +30,12 @@ const props = defineProps({
   },
 });
 // const { progress, cursor, pageLoaded } = props;
+let BABYLON: any;
+let resizeWatcher: ResizeObserver;
 
 let ready = false;
 let offset = 0.15;
-let nextRootPosition: BABYLON.Vector3 = new BABYLON.Vector3(0, 0, 0);
+let nextRootPosition: BABYLON.Vector3;
 let canvas!: HTMLCanvasElement;
 let engine!: BABYLON.Engine;
 let scene!: BABYLON.Scene;
@@ -72,7 +74,7 @@ const initScene = () => {
     }
   }
   // Watch canvas resize event to adjust the 3D scene
-  const resizeWatcher = new ResizeObserver(() => {
+  resizeWatcher = new ResizeObserver(() => {
     engine.resize();
   });
   resizeWatcher.observe(canvas);
@@ -113,6 +115,7 @@ const loadCompass = async () => {
         break;
       case "__root__":
         mesh.rotationQuaternion = null;
+        mesh.rotation.y = Math.PI;
         break;
     }
     mesh.material = pbr;
@@ -123,6 +126,7 @@ const loadCompass = async () => {
 const setIdle = () => {
   let swap = 0;
   const root = scene.getMeshByName("__root__")!;
+  if (!nextRootPosition) nextRootPosition = new BABYLON.Vector3(0, 0, 0);
   if (!isMobile() && !isSmartPhone()) {
     // root.rotation = new BABYLON.Vector3(0, Math.PI, 0);
   }
@@ -217,28 +221,36 @@ const emit = defineEmits<{
 }>();
 
 onMounted(async () => {
-  if (isMobile() || isSmartPhone()) {
-    offset = -0.2;
+  if (process.client) {
+    BABYLON = await import("babylonjs");
+    await import("babylonjs-loaders");
+    if (isMobile() || isSmartPhone()) {
+      offset = -0.2;
+    }
+    if ((isMobile() || isSmartPhone()) && isLandscape()) {
+      offset = 0;
+    }
+
+    initScene();
+    await loadCompass();
+    emit("compass-loaded", true);
+    setIdle();
+    spinCompass(0);
+    swayCompass({ x: 0, y: 0 });
+
+    ready = true;
+
+    // scene.debugLayer.show();
+
+    engine.runRenderLoop(() => {
+      scene.render();
+    });
   }
-  if ((isMobile() || isSmartPhone()) && isLandscape()) {
-    offset = 0;
-  }
+});
 
-  initScene();
-  console.log(await loadCompass());
-
-  emit("compass-loaded", true);
-  setIdle();
-  spinCompass(0);
-  swayCompass({ x: 0, y: 0 });
-
-  ready = true;
-
-  // scene.debugLayer.show()
-
-  engine.runRenderLoop(() => {
-    scene.render();
-  });
+onUnmounted(() => {
+  resizeWatcher.disconnect();
+  engine.dispose(); // also good practice
 });
 
 watch(
