@@ -6,17 +6,16 @@ const images = import.meta.glob("~/assets/img/screenshots/*", {
 })
 
 export function attachImages(projects: Project[]): Project[] {
-  console.info(images)
   return projects.map((project) => {
     const imgPath = `/assets/img/screenshots/${project.image}`
-    const matchedImage = images[imgPath]
+    const matchedImage = images[imgPath] as string
     if (!matchedImage) {
       console.warn(`Image not found for project: ${project.title} (${imgPath})`)
     }
 
     return {
       ...project,
-      imageSrc: matchedImage || null
+      imageSrc: matchedImage || undefined
     }
   })
 }

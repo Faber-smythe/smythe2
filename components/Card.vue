@@ -39,28 +39,24 @@ const props = defineProps({
 });
 const { project, imageSrc } = props;
 
-// const imagePath = require(`@/assets/img/${project.image}`);
-// const imagePath = "https://placehold.co/600x400";
 const imagePath = imageSrc!;
 
-console.log(project);
 // try loading the required image already, in order to warn the index when ready
+const emit = defineEmits<{
+  (e: "img-load", payload: string): void;
+}>();
 
-// const emit = defineEmits<{
-//   (e: "img-load", payload: string): void;
-// }>();
-
-// onMounted(() => {
-//   const _img = new Image();
-//   _img.src = imagePath;
-//   _img.addEventListener("load", () => {
-//     emit("img-load", imagePath);
-//   });
-// });
+onMounted(() => {
+  const _img = new Image();
+  _img.src = imagePath;
+  _img.addEventListener("load", () => {
+    emit("img-load", imagePath);
+  });
+});
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap");
 
 #badgeHolder {
   top: 10px;
@@ -153,8 +149,8 @@ console.log(project);
   font-weight: 100;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: flex-end; */
+  justify-content: start;
+  align-items: flex-end;
   overflow: hidden;
 }
 
@@ -202,6 +198,7 @@ console.log(project);
     font-size: 1em;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .card {
     width: 100%;
@@ -226,14 +223,13 @@ console.log(project);
     left: 0vw;
     width: 50vw;
     height: 100%;
-    padding: 10px;
+    padding: 8px;
     border: none;
     background: rgba(255, 255, 255, 1);
     font-family: "Roboto", sans-serif;
     font-size: 0.7em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-end;
   }
   .card .desc p {
@@ -260,6 +256,12 @@ console.log(project);
 @media screen and (max-width: 1024px) and (orientation: landscape) {
   .card {
     height: 51vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  .card .desc {
+    font-weight: 300;
+    font-size: 0.5em;
   }
 }
 </style>

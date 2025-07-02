@@ -10,8 +10,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 import myData from "@/data/projects.json";
-
-const count = ref(0);
+import { gsap } from "gsap";
 
 function increment() {
   count.value++;
@@ -20,8 +19,8 @@ function increment() {
 // const projects = require("@/data/projects.json") as Project[];
 
 onMounted(() => {
-  console.log("Component is mounted!");
-  console.log("projects :", myData);
+  gsap.to(".my-component", { x: 100 });
+  const count = ref(0);
   // e.g., start some process, fetch data, add event listener
 });
 

@@ -83,69 +83,18 @@ const getBadge = (badge: string) => {
   font-size: 0.7rem;
 }
 
-@media screen and (max-width: 1440px) {
-  .card .desc {
-    font-size: 1em;
-  }
-}
 @media screen and (max-width: 1024px) {
-  .card {
-    width: 100%;
-    height: 50%;
-    margin: -2px;
-  }
-
-  .card h2 {
-    font-size: 1.4em;
-    text-align: center;
-  }
-
-  .card .cardName {
-    text-transform: uppercase;
-    font-size: 1.1em;
-    margin: 5px;
-  }
-
-  .card .desc {
-    position: absolute;
-    z-index: -1;
-    left: 0vw;
-    width: 50vw;
-    height: 100%;
-    padding: 10px;
-    border: none;
-    background: rgba(255, 255, 255, 1);
-    font-family: "Roboto", sans-serif;
-    font-size: 0.7em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  .card .desc p {
-    text-align: right;
-  }
-  .card:hover {
-    width: 50vw;
-    margin-left: 50vw;
-  }
-  .card:hover .desc {
-    left: -50vw;
-    border: none;
-  }
-  .card .desc a:hover {
-    opacity: 1;
+  .badge {
+    margin: 3px;
+    font-size: 0.6rem;
   }
 }
 
-@media screen and (max-width: 1024px) and (orientation: portrait) {
-  .card {
-    height: calc(101vh / 3);
-  }
-}
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-  .card {
-    height: 51vh;
+@media screen and (max-width: 767px) {
+  .badge {
+    margin: 1px;
+    padding: 5px 7px;
+    font-size: 0.6rem;
   }
 }
 </style>

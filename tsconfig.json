@@ -26,9 +26,22 @@
     },
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "gsap",
+      "babylonjs",
+      "babylonjs-gui",
+      "babylonjs-materials"
     ]
   },
+  "files": [
+    "node_modules/gsap/types/index.d.ts",
+    "node_modules/babylonjs/babylon.module.d.ts"
+  ],
+  "include": [
+    "nuxt.d.ts", 
+    "types", 
+    "**/*"
+  ],
   "exclude": [
     "node_modules",
     ".nuxt",
