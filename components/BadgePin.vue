@@ -64,6 +64,12 @@ const getBadge = (badge: string) => {
         link: "https://www.typescriptlang.org/",
       };
       break;
+    case "tailwindcss":
+      return {
+        tag: "TailwindCSS",
+        link: "https://v3.tailwindcss.com/",
+      };
+      break;
     default:
       return {};
   }
