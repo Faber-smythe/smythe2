@@ -124,6 +124,10 @@ onMounted(() => {
   z-index: 2;
   font-size: 2.5em;
   font-weight: 100;
+  border-radius: 30px;
+  padding: 0px 15px;
+  box-shadow: 0px 0px 40px 40px rgba(0, 0, 0, 0.15),
+    0px 0px 50px 60px inset rgba(0, 0, 0, 0.15);
 }
 
 .card .filter {

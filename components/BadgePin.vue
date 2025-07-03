@@ -87,6 +87,7 @@ const getBadge = (badge: string) => {
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 0.7rem;
+  font-weight: 300;
 }
 
 @media screen and (max-width: 1024px) {

@@ -2,7 +2,7 @@
 
 :root {
   --highlight: rgb(31, 50, 71); 
-  --highlight-transp: rgba(31, 50, 71, 0.5); 
+  --highlight-transp: rgba(31, 50, 71, 0.6); 
   --background: rgb(243, 244, 246); 
   --background-transp: rgba(243, 244, 246, 0.9); 
   --text: black;
