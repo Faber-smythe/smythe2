@@ -149,7 +149,7 @@ onMounted(() => {
   border-color: var(--highlight-transp);
   background: var(--background-transp);
   font-family: "Roboto", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 100;
   display: flex;
   flex-direction: column;
@@ -199,7 +199,7 @@ onMounted(() => {
 
 @media screen and (max-width: 1440px) {
   .card .desc {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 
@@ -231,7 +231,7 @@ onMounted(() => {
     border: none;
     background: rgba(255, 255, 255, 1);
     font-family: "Roboto", sans-serif;
-    font-size: 0.7em;
+    font-size: 0.9em;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
