@@ -43,7 +43,7 @@
   {
     "disabled": false,
     "title": "4-Pearl game",
-    "link": "",
+    "link": "https://tetra-production.up.railway.app/",
     "image": "tetra.png",
     "alt": "A 3D game showing white and black pearls stacked on vertical wood sticks",
     "desc": "This project is a digital version of a turn-based boardgame from my childhood. Align four pearls of the same colour along any axis for the win. It features an interactive 3D board and a timeline slider to review game moves.",
@@ -70,11 +70,23 @@
   },
   {
     "disabled": false,
+    "title": "Narrative Cutscene Engine",
+    "link": "https://faber-smythe.github.io/bg3-cutscene/",
+    "image": "bg3-cutscene.png",
+    "alt": "A video game screenshot of a dog in the wilderness with dialog options",
+    "desc": "This engine uses a JSON story file to generate an immersive narraitve experience with branching dialog options, sound effects and more. This was a custom project meant to try out AI assisted programming. <br> <a href='https://github.com/Faber-smythe/bg3-cutscene' target='_blank'><strong>See the repository on github</strong></a>",
+    "badges": [
+      "typescript",
+      "copilot"
+    ]
+  },
+  {
+    "disabled": false,
     "title": "Period Tracker",
     "link": "https://raigle.smythe.fr/",
     "image": "raigle.png",
-    "alt": "A desk with a morse key in front of a sunset",
-    "desc": "This minimalist tracker for mobile was made in a 4 days challenge to try out Tailwindcss and PWA",
+    "alt": "A mockup of a mobile app showing a calendar with menstruation cycles",
+    "desc": "This minimalist menstruation tracker was made as a 4 days challenge focused on mobile design to try out Tailwindcss and PWA.",
     "badges": [
       "react",
       "tailwindcss",

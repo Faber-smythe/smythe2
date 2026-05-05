@@ -70,6 +70,12 @@ const getBadge = (badge: string) => {
         link: "https://v3.tailwindcss.com/",
       };
       break;
+    case "copilot":
+      return {
+        tag: "Copilot",
+        link: "https://github.com/features/copilot?l",
+      };
+      break;
     default:
       return {};
   }
